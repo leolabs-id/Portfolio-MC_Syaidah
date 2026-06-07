@@ -1004,7 +1004,7 @@ select.form-field {
     
     .hero-section::before {
         /* Mengubah arah overlay gradasi menjadi dari bawah ke atas agar teks putih di bawah tetap kontras */
-        background: linear-gradient(to top, rgba(4, 20, 39, 0.98) 50%, rgba(4, 20, 39, 0.8) 75%, rgba(11, 25, 44, 0.4) 100%);
+        background: linear-gradient(to top, rgba(4, 20, 39, 0.98) 30%, rgba(4, 20, 39, 0.8) 55%, rgba(11, 25, 44, 0.4) 100%);
     }
     
     .hero-content {
