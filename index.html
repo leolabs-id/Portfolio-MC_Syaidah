@@ -1,175 +1,285 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio MC Bilingual | Syaidah</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-
+    <title>MC Syaidah — Bilingual MC, Host & Moderator | Corporate & Wedding Events Jakarta</title>
+    <meta name="description" content="Menciptakan momen bermakna melalui koneksi yang tulus. Bilingual MC, Host, dan Moderator profesional untuk acara korporat, seminar, dan pernikahan di Jakarta.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <!-- ini header menu options -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-            <div class="container">
-                <a class="navbar-brand fw-bold" href="#home">Syaidah MC</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="#wedding">MC Wedding</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#corporate">MC Corporate</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
-                        <li class="nav-item"><a class="nav-link btn btn-outline-primary ms-md-2"
-                                href="#kontak">Hubungi</a></li>
-                    </ul>
+
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">MC <span>Syaidah</span></a>
+            <div class="nav-links">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#moments" class="nav-link">Moments</a>
+                <a href="#meet" class="nav-link">Meet</a>
+                <a href="#connect" class="nav-link">Connect</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-btn active" id="btn-id" onclick="toggleLanguage('id')">ID</button>
+                <button class="lang-btn" id="btn-en" onclick="toggleLanguage('en')">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="home">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="badges">
+                    <span class="badge">Bilingual MC</span>
+                    <span class="badge">Host</span>
+                    <span class="badge">Moderator</span>
+                    <span class="badge">Public Speaker</span>
+                </div>
+                <div class="hero-name">MC Syaidah</div>
+                <h1 class="hero-hl lang-el" id="hero-title">
+                    Creating <em>meaningful moments</em><br>through genuine connection.
+                </h1>
+                <p class="hero-sub lang-el" id="hero-desc">
+                    Helping audiences feel welcomed, engaged, and part of the experience — from professional gatherings to life's meaningful celebrations.
+                </p>
+                <div class="hero-btns">
+                    <a href="#moments" class="btn btn-p lang-el" id="hero-btn-portfolio">View Portfolio</a>
+                    <a href="#connect" class="btn btn-s lang-el" id="hero-btn-connect">Let's Connect</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-n">8+</div>
+                        <div class="stat-l lang-el" id="stat-years">Years</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-n">20+</div>
+                        <div class="stat-l lang-el" id="stat-orgs">Organizations</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-n">ID · EN</div>
+                        <div class="stat-l lang-el" id="stat-bilingual">Bilingual</div>
+                    </div>
                 </div>
             </div>
-        </nav>
+            <div class="hero-right">
+                <div class="hero-photo">
+                    <img src="assets/img/hero-syaidah.webp" alt="MC Syaidah Professional Stage" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="photo-placeholder-fallback">
+                        <i data-lucide="user"></i>
+                        <span>Foto terbaik sedang di panggung (senyum + mic)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
-
-        <section id="home" class="hero bg-light text-center py-5">
-            <div class="container">
-                <h1 class="display-4 fw-bold mb-3">Syaidah: The Voice of Your Event.</h1>
-                <p class="lead mb-4">
-                    **Master of Ceremony (MC) Bilingual** (Indonesia & English): Memastikan setiap detik acara Wedding
-                    dan Corporate Anda berjalan mulus dan berkesan.
-                </p>
-                <a href="#kontak" class="btn btn-primary btn-lg me-2">Cek Tanggal Tersedia</a>
-                <a href="#portofolio" class="btn btn-outline-secondary btn-lg">Lihat Portofolio</a>
+    <section class="trust-section">
+        <div class="trust-container">
+            <div class="trust-lbl lang-el" id="trust-label">Trusted by organizations, institutions, and communities</div>
+            <div class="logo-row">
+                <span class="logo-chip">BPJS Kesehatan</span>
+                <span class="logo-chip">Bappenas</span>
+                <span class="logo-chip">OJK</span>
+                <span class="logo-chip">DPR RI</span>
+                <span class="logo-chip">Ajinomoto</span>
+                <span class="logo-chip">MCC USA</span>
+                <span class="logo-chip">Coventry University</span>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="wedding" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">MC Pernikahan Bilingual: Mengukir Kisah Cinta Anda.</h2>
+    <section class="approach-section">
+        <div class="approach-container">
+            <h2 class="a-heading lang-el" id="approach-title">More Than Keeping an Event on Schedule</h2>
+            <p class="a-body lang-el" id="approach-body">
+                Every event has its own purpose. Some are designed to share ideas, some to strengthen relationships, and others to celebrate important milestones. Syaidah believes hosting is more than simply guiding an agenda from one session to the next. It is about creating an atmosphere where speakers feel appreciated, guests feel welcomed, and conversations flow naturally. Through warmth, attentiveness, and genuine audience engagement, she helps events feel both professional and truly memorable.
+            </p>
+        </div>
+    </section>
 
-                <div class="row align-items-center">
-                    <div class="col-md-7 order-md-1 order-2">
-                        <article class="service-wedding p-3">
-                            <h3>Kehangatan dalam Dua Bahasa.</h3>
-                            <p class="text-muted">Spesialisasi dalam resepsi pernikahan tradisional hingga
-                                internasional. Saya menghadirkan kehangatan, keintiman, dan alur acara yang terstruktur,
-                                memastikan baik tamu lokal maupun asing merasa terhubung.</p>
-                            <ul class="list-unstyled">
-                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Pendekatan personal dengan
-                                    calon pengantin.</li>
-                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Sistem Bilingual yang
-                                    elegan dan natural.</li>
-                                <li><i class="bi bi-check-circle-fill text-primary me-2"></i> Pengelolaan *rundown* yang
-                                    ketat namun fleksibel.</li>
-                            </ul>
-                        </article>
+    <section class="moments-section" id="moments">
+        <div class="moments-container">
+            <h2 class="a-heading lang-el" id="moments-title">Selected Experiences</h2>
+            <div class="moments-grid">
+                <div class="m-card">
+                    <div class="m-img c1"><i data-lucide="building-2"></i></div>
+                    <div class="m-lbl lang-el" id="card-title-1">Conferences & Forums</div>
+                    <div class="m-sub">BPJS Kesehatan, Bappenas, OJK</div>
+                    <span class="m-badge">EN / Bilingual</span>
+                </div>
+                <div class="m-card">
+                    <div class="m-img c2"><i data-lucide="users"></i></div>
+                    <div class="m-lbl lang-el" id="card-title-2">Corporate Gatherings</div>
+                    <div class="m-sub">Ajinomoto, PT USC Indonesia</div>
+                    <span class="m-badge">Bilingual</span>
+                </div>
+                <div class="m-card">
+                    <div class="m-img c3"><i data-lucide="mic"></i></div>
+                    <div class="m-lbl lang-el" id="card-title-3">Moderating Sessions</div>
+                    <div class="m-sub">Panel, Talkshow, Seminar</div>
+                    <span class="m-badge">EN / ID</span>
+                </div>
+                <div class="m-card">
+                    <div class="m-img c4"><i data-lucide="heart"></i></div>
+                    <div class="m-lbl lang-el" id="card-title-4">Celebrations & Weddings</div>
+                    <div class="m-sub">Akad, Resepsi, Intimate</div>
+                    <span class="m-badge">ID / Bilingual</span>
+                </div>
+            </div>
+            
+            <div class="pdf-row">
+                <a href="#" target="_blank" class="pdf-btn prim lang-el" id="pdf-view-btn"><i data-lucide="file-text"></i> View Full Portfolio</a>
+                <a href="#" target="_blank" class="pdf-btn lang-el" id="pdf-dl-btn"><i data-lucide="download"></i> Download PDF</a>
+                <span class="pdf-hint lang-el" id="pdf-hint-text">Opens Google Drive in new tab</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="testi-section">
+        <div class="testi-container">
+            <h2 class="a-heading lang-el" id="testi-title">What People Remember</h2>
+            <div class="testi-grid">
+                <div class="t-card">
+                    <p class="t-q">"She made the room feel comfortable without losing the formality the event required."</p>
+                    <div class="t-who">Corporate Client</div>
+                    <div class="t-org lang-el" id="testi-org-1">Government & Corporate Event</div>
+                </div>
+                <div class="t-card">
+                    <p class="t-q">"MC keren dan cantik, mau diajak diskusi, humble banget. Seneng banget dapet MC kayak gini."</p>
+                    <div class="t-who">Kak Naomi</div>
+                    <div class="t-org">Tim Djourney Indonesia</div>
+                </div>
+                <div class="t-card">
+                    <p class="t-q">"Next kalau ada acara lagi mauuu sama kak Syaidah lagi."</p>
+                    <div class="t-who">Putri Kalingga</div>
+                    <div class="t-org">Community Event</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="meet-section" id="meet">
+        <div class="meet-container">
+            <div class="meet-grid">
+                <div class="meet-left">
+                    <h2 class="a-heading lang-el" id="meet-title">Meet Syaidah</h2>
+                    <p class="a-body lang-el" id="meet-body">
+                        Nur Syaidah holds a degree in Communication Studies and has been hosting events since 2017 — from intimate community forums to large-scale government conferences. As an active member of Toastmasters International and a certified bilingual MC, she brings both structure and genuine warmth to every stage she steps onto.
+                    </p>
+                    <div class="cred-row">
+                        <span class="cred">S.I.Kom.</span>
+                        <span class="cred">CLT Certified</span>
+                        <span class="cred">Toastmasters International</span>
+                        <span class="cred">EF × Cambridge</span>
+                        <span class="cred">Jakarta Language Ambassador 2019</span>
+                        <span class="cred">Most Outstanding Diplomat MOIC 2019</span>
                     </div>
-                    <div class="col-md-5 order-md-2 order-1 mb-4 mb-md-0">
-                        <figure class="m-0">
-                            <img src="foto-mc-wedding.jpg" class="img-fluid rounded shadow"
-                                alt="MC Pernikahan Internasional">
-                            <figcaption class="text-center mt-2 text-muted">Momen di Mandiri Tower - Menghadirkan
-                                keceriaan di acara resepsi.</figcaption>
-                        </figure>
+                </div>
+                <div class="meet-right">
+                    <div class="meet-photo">
+                        <img src="assets/img/meet-editorial.webp" alt="Nur Syaidah Portrait" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="photo-placeholder-fallback">
+                            <i data-lucide="user-check"></i>
+                            <span>Foto editorial berbeda dari hero</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <hr class="my-5">
-        <section id="corporate" class="py-5">
-            <div class="container">
-                <h2 class="text-center mb-5">MC Corporate & Formal: Profesionalisme yang Tepat Sasaran.</h2>
+    <section class="manifesto-section">
+        <div class="manifesto-container">
+            <p class="manifesto-q lang-el" id="manifesto-quote">
+                "The most memorable events are not always the grandest ones. They are the ones where people feel <span>seen</span>, <span>appreciated</span>, and <span>connected</span>."
+            </p>
+        </div>
+    </section>
 
-                <div class="row align-items-center">
-                    <div class="col-md-5 mb-4 mb-md-0">
-                        <figure class="m-0">
-                            <img src="foto-mc-corporate.jpg" class="img-fluid rounded shadow"
-                                alt="MC Konferensi Bisnis">
-                            <figcaption class="text-center mt-2 text-muted">Memandu Konferensi Teknologi oleh BPJS
-                                Kesehatan.</figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-md-7">
-                        <article class="service-corporate p-3">
-                            <h3>Kredibilitas dalam Setiap Kata.</h3>
-                            <p class="text-muted">Dari seminar, konferensi, peluncuran produk, hingga Gala Dinner. Saya
-                                memastikan *brand message* tersampaikan dengan jelas dan atmosfer acara tetap
-                                profesional sesuai standar global.</p>
-                            <ul class="list-unstyled">
-                                <li><i class="bi bi-star-fill text-warning me-2"></i> Fokus pada ketepatan waktu dan
-                                    transisi antar pembicara.</li>
-                                <li><i class="bi bi-star-fill text-warning me-2"></i> Kemampuan adaptasi dengan protokol
-                                    acara formal.</li>
-                                <li><i class="bi bi-star-fill text-warning me-2"></i> Komunikasi Bilingual yang *crisp*
-                                    dan formal.</li>
-                            </ul>
-                        </article>
-                    </div>
-                </div>
+    <section class="ig-section">
+        <div class="ig-container">
+            <h2 class="a-heading lang-el" id="ig-title">Latest Moments</h2>
+            <div class="ig-subtitle lang-el" id="ig-desc">A glimpse of recent events, stories, and behind-the-scenes moments.</div>
+            
+            <div class="ig-grid">
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-1.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-2.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-3.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-4.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-5.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-6.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
             </div>
-        </section>
+            
+            <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-follow">
+                <i data-lucide="instagram"></i> Follow @mc.syaidah — <span class="lang-el" id="ig-cta-hint">klik foto membuka Instagram</span>
+            </a>
+        </div>
+    </section>
 
-        <section id="testimoni" class="py-5 bg-light">
-            <div class="container">
-                <h2 class="text-center mb-5">Kata Mereka yang Telah Merayakan</h2>
-                <div class="row justify-content-center">
-                    <div class="col-lg-6 mb-4">
-                        <figure class="p-4 bg-white rounded shadow-sm">
-                            <blockquote class="blockquote fst-italic">
-                                <p>"Kami sangat puas! MC Syaidah berhasil membuat acara kami terasa akrab, profesional,
-                                    dan transisi bilingualnya sempurna. Thank you for making our day!"</p>
-                            </blockquote>
-                            <figcaption class="blockquote-footer mt-2">
-                                Pasangan Azury & Putra, <cite title="Klien Pernikahan">Klien Pernikahan</cite>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="col-lg-6 mb-4">
-                        <figure class="p-4 bg-white rounded shadow-sm">
-                            <blockquote class="blockquote fst-italic">
-                                <p>"Highly recommended! Pembawaannya berkelas, mampu mengelola sesi Q&A yang kompleks
-                                    dengan lancar di dua bahasa. Sangat membantu citra perusahaan kami."</p>
-                            </blockquote>
-                            <figcaption class="blockquote-footer mt-2">
-                                Rendra, <cite title="Klien Corporate">Klien Corporate</cite>
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
+    <section class="connect-section" id="connect">
+        <div class="connect-container">
+            <h2 class="connect-hl lang-el" id="connect-title">Planning an Event?</h2>
+            <p class="connect-sub lang-el" id="connect-desc">Let's create an experience your audience will remember.</p>
+            
+            <div class="connect-btns">
+                <a href="https://wa.me/6285100000000" target="_blank" class="c-btn wa"><i data-lucide="message-circle"></i> WhatsApp</a>
+                <a href="mailto:syaidah.mc@gmail.com" class="c-btn"><i data-lucide="mail"></i> Email</a>
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="c-btn"><i data-lucide="instagram"></i> Instagram</a>
             </div>
-        </section>
+            
+            <form action="https://api.web3forms.com/submit" method="POST" id="hybrid-booking-form" class="form-grid">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                
+                <input type="text" name="name" id="f-name" class="form-field" placeholder="Nama lengkap / Full name" required>
+                <input type="tel" name="whatsapp" id="f-whatsapp" class="form-field" placeholder="No. WhatsApp" required>
+                
+                <select name="event_type" id="f-type" class="form-field" required>
+                    <option value="" disabled selected hidden>Jenis acara / Type of event ▾</option>
+                    <option value="Conferences & Forums">Conferences & Forums</option>
+                    <option value="Corporate Gatherings">Corporate Gatherings</option>
+                    <option value="Moderating Sessions">Moderating Sessions</option>
+                    <option value="Celebrations & Weddings">Celebrations & Weddings</option>
+                </select>
+                
+                <input type="text" name="event_date" id="f-date" class="form-field" placeholder="Tanggal acara / Event date" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                
+                <select name="language" id="f-lang" class="form-field" required>
+                    <option value="" disabled selected hidden>Bahasa / Language ▾</option>
+                    <option value="Indonesia (ID)">Indonesia (ID)</option>
+                    <option value="English (EN)">English (EN)</option>
+                    <option value="Bilingual (ID & EN)">Bilingual (ID & EN)</option>
+                </select>
+                
+                <input type="text" name="location" id="f-loc" class="form-field" placeholder="Lokasi / Location" required>
+                <textarea name="message" id="f-msg" class="form-field form-full" placeholder="Pesan / Message" rows="3" required></textarea>
+                
+                <button type="submit" class="form-submit lang-el" id="form-submit-btn">Send & Open WhatsApp →</button>
+            </form>
+        </div>
+    </section>
 
-        <section id="kontak" class="py-5">
-            <div class="container text-center">
-                <h2>Siap untuk Acara Anda Berikutnya?</h2>
-                <p class="lead mb-4">Cek ketersediaan tanggal Wedding atau konsultasi kebutuhan Corporate.</p>
-                <address class="fs-5">
-                    <p class="mb-1">Email: <a href="mailto:syaidah.mc@email.com">syaidah.mc@email.com</a></p>
-                    <p>WhatsApp: <a href="https://wa.me/6282113741337" target="_blank" class="text-success fw-bold">+62
-                            821 1374 1337</a></p>
-                </address>
-                <a href="#" class="btn btn-primary btn-lg mt-3">Pesan Jadwal Sekarang</a>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">MC Syaidah</div>
+            <div class="footer-links">
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="footer-link">Instagram</a>
+                <a href="#" target="_blank" class="footer-link">LinkedIn</a>
+                <a href="https://wa.me/6285100000000" target="_blank" class="footer-link">WhatsApp</a>
             </div>
-        </section>
-
-    </main>
-
-    <footer>
-        <p>Follow My Journey on Instagram | &copy; 2025 Nur Syaidah.</p>
+            <div class="footer-copy">© 2026 Nur Syaidah. All rights reserved.</div>
+        </div>
     </footer>
 
+    <a href="https://wa.me/6285100000000" target="_blank" class="wa-float" id="whatsapp-floating" aria-label="Chat WhatsApp MC Syaidah">
+        <i data-lucide="message-circle"></i>
+    </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-
-    <script src="script.js"></script>
+    <script src="js/languages.js"></script>
+    <script src="js/main.js"></script>
 </body>
-
 </html>
