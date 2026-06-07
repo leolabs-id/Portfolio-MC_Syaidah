@@ -689,8 +689,13 @@ section {
 }
 
 /* ==========================================================================
-   09. LATEST MOMENTS — INSTAGRAM STATIS
+   09. LATEST MOMENTS — DYNAMIC INSTAGRAM WIDGET
    ========================================================================== */
+.ig-section {
+    background-color: white;
+    border-top: 0.5px solid rgba(156, 163, 175, 0.2);
+}
+
 .ig-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -707,43 +712,17 @@ section {
     margin-bottom: 32px;
 }
 
-.ig-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-}
-
-.ig-cell {
-    aspect-ratio: 1;
-    background-color: white;
-    border: 0.5px solid rgba(156, 163, 175, 0.2);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-tertiary);
-    text-decoration: none;
-}
-
-.ig-cell img {
+/* Wadah Pengunci Ukuran Widget Pihak Ketiga */
+.ig-widget-container {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: var(--transition-smooth);
+    margin-bottom: 32px;
 }
 
-.ig-cell i {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    z-index: 1;
-}
-
-.ig-cell:hover img {
-    transform: scale(1.06);
+/* Mengambil kendali kustomisasi elemen internal widget dari luar */
+.ig-widget-container iframe,
+.ig-widget-container div {
+    border-radius: var(--radius-md) !important; /* Memaksa sudut membulat yang lembut */
+    font-family: var(--font-sans) !important; /* Menyelaraskan font caption dengan website */
 }
 
 .ig-follow {
@@ -757,21 +736,24 @@ section {
     transition: var(--transition-smooth);
 }
 
-.ig-follow i {
+.ig-follow i,
+.ig-follow svg {
     width: 16px;
     height: 16px;
 }
 
 .ig-follow:hover {
     color: var(--navy-medium);
+    transform: translateY(-1px);
 }
 
 /* ==========================================================================
-   10. CONNECT — FINAL CTA & HYBRID FORM
+   10. CONNECT — FINAL CTA & HYBRID FORM (FIXED COLORS)
    ========================================================================== */
 .connect-section {
     background-color: white;
     border-top: 0.5px solid rgba(156, 163, 175, 0.2);
+    padding: 70px 24px;
 }
 
 .connect-container {
@@ -806,8 +788,6 @@ section {
     font-weight: 600;
     padding: 10px 20px;
     border-radius: var(--radius-md);
-    border: 0.5px solid rgba(156, 163, 175, 0.4);
-    color: var(--text-secondary);
     text-decoration: none;
     display: inline-flex;
     align-items: center;
@@ -815,20 +795,41 @@ section {
     transition: var(--transition-smooth);
 }
 
-.c-btn i {
+.c-btn i,
+.c-btn svg {
     width: 16px;
     height: 16px;
 }
 
+/* Tombol WA: Deep Navy Accent */
 .c-btn.wa {
     background-color: var(--navy-accent);
     color: white;
-    border-color: var(--navy-accent);
+    border: 1px solid var(--navy-accent);
 }
 
-.c-btn:hover {
+/* Tombol Email & Instagram: Gaya Outlined Premium dengan Pewarnaan Kontras */
+.c-btn.mail,
+.c-btn.ig {
+    background-color: transparent;
+    border: 1px solid rgba(30, 62, 98, 0.3);
+    color: var(--navy-deep); 
+}
+
+/* Efek Hover untuk Semua Tombol Sosmed */
+.c-btn.wa:hover {
+    background-color: var(--navy-medium);
+    border-color: var(--navy-medium);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 12px rgba(24, 95, 165, 0.15);
+}
+
+.c-btn.mail:hover,
+.c-btn.ig:hover {
+    background-color: rgba(30, 62, 98, 0.05);
+    border-color: var(--navy-accent);
+    color: var(--navy-accent);
+    transform: translateY(-2px);
 }
 
 .form-grid {

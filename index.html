@@ -271,13 +271,15 @@
             <h2 class="a-heading lang-el" id="ig-title">Momen Terkini</h2>
             <div class="ig-subtitle lang-el" id="ig-desc">Sekilas acara terbaru, cerita di balik panggung, dan momen-momen yang berkesan.</div>
             
-            <div class="ig-grid">
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-1.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-2.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-3.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-4.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-5.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-cell"><img src="assets/img/ig-6.jpg" alt="Instagram Post" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"><i data-lucide="image"></i></a>
+            <div class="ig-widget-container">
+                <div data-behold-id="t2hN2IyZWb9YMUN00dFS"></div>
+                
+                <script>
+                  (function() {
+                    const d=document,s=d.createElement("script");s.type="module";
+                    s.src="https://w.behold.so/widget.js";d.head.append(s);
+                  })();
+                </script>
             </div>
             
             <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-follow">
@@ -292,16 +294,25 @@
             <p class="connect-sub lang-el" id="connect-desc">Mari ciptakan pengalaman yang akan diingat audiens kamu.</p>
             
             <div class="connect-btns">
-                <a href="https://wa.me/6285100000000" target="_blank" class="c-btn wa"><i data-lucide="message-circle"></i> WhatsApp</a>
-                <a href="mailto:syaidah.mc@gmail.com" class="c-btn"><i data-lucide="mail"></i> Email</a>
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="c-btn"><i data-lucide="instagram"></i> Instagram</a>
+                <a href="https://wa.me/62851110810257" target="_blank" class="c-btn wa"><i data-lucide="message-circle"></i> WhatsApp</a>
+                <a href="mailto:syaidah.mc@gmail.com" class="c-btn mail"><i data-lucide="mail"></i> Email</a>
+                
+                <a href="https://instagram.com/mc.syaidah" target="_blank" class="c-btn ig">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin='round' class="svg-ig">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    Instagram
+                </a>
             </div>
             
             <form action="https://api.web3forms.com/submit" method="POST" id="hybrid-booking-form" class="form-grid">
                 <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                 
                 <input type="text" name="name" id="f-name" class="form-field" placeholder="Nama lengkap / Full name" required>
-                <input type="tel" name="whatsapp" id="f-whatsapp" class="form-field" placeholder="No. WhatsApp" required>
+                
+                <input type="tel" name="whatsapp" id="f-whatsapp" class="form-field" placeholder="No. WhatsApp (Contoh: 628123456...)" pattern="[0-9]{9,15}" inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
                 
                 <select name="event_type" id="f-type" class="form-field" required>
                     <option value="" disabled selected hidden>Jenis acara / Type of event ▾</option>
@@ -333,14 +344,16 @@
             <div class="footer-logo">MC Syaidah</div>
             <div class="footer-links">
                 <a href="https://instagram.com/mc.syaidah" target="_blank" class="footer-link">Instagram</a>
-                <a href="#" target="_blank" class="footer-link">LinkedIn</a>
-                <a href="https://wa.me/6285100000000" target="_blank" class="footer-link">WhatsApp</a>
+                
+                <a href="https://www.linkedin.com/in/nursyaidah14/" target="_blank" class="footer-link">LinkedIn</a>
+                
+                <a href="https://wa.me/6285110810257" target="_blank" class="footer-link">WhatsApp</a>
             </div>
             <div class="footer-copy">© 2026 Nur Syaidah. All rights reserved.</div>
         </div>
     </footer>
 
-    <a href="https://wa.me/6285100000000" target="_blank" class="wa-float" id="whatsapp-floating" aria-label="Chat WhatsApp MC Syaidah">
+    <a href="https://wa.me/6285110810257" target="_blank" class="wa-float" id="whatsapp-floating" aria-label="Chat WhatsApp MC Syaidah">
         <i data-lucide="message-circle"></i>
     </a>
 

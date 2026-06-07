@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const heroSection = document.getElementById("home");
 
     window.addEventListener("scroll", function () {
-        if (heroSection) {
+        if (heroSection && waFloatingBtn) {
             const heroHeight = heroSection.offsetHeight;
             if (window.scrollY > (heroHeight - 100)) {
                 waFloatingBtn.classList.add("visible");
@@ -24,21 +24,21 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if (bookingForm) {
         bookingForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Menghentikan redirect default halaman
+            e.preventDefault(); // Menghentikan redirect bawaan browser agar skrip sinkron berjalan
 
             // Mengambil seluruh nilai input form
-            const clientName = document.getElementById("f-name").value;
-            const clientWA = document.getElementById("f-whatsapp").value;
+            const clientName = document.getElementById("f-name").value.trim();
+            const clientWA = document.getElementById("f-whatsapp").value.trim();
             const eventType = document.getElementById("f-type").value;
             const eventDate = document.getElementById("f-date").value;
             const langPref = document.getElementById("f-lang").value;
-            const location = document.getElementById("f-loc").value;
-            const message = document.getElementById("f-msg").value;
+            const location = document.getElementById("f-loc").value.trim();
+            const message = document.getElementById("f-msg").value.trim();
 
-            // Masukkan Nomor WhatsApp Syaidah di sini (Gunakan kode negara tanpa tanda + atau spasi)
-            const targetWANumber = "6285100000000"; 
+            // Kunci Utama: Nomor WhatsApp Resmi MC Syaidah (Format International Tanpa + atau Spasi)
+            const targetWANumber = "6285110810257"; 
 
-            // Membangun template struktur teks untuk dikirim ke WhatsApp
+            // Membangun template struktur teks untuk dikirim ke WhatsApp Syaidah
             const whatsappText = `Halo MC Syaidah, saya tertarik untuk melakukan booking jadwal. Berikut detail acaranya:\n\n` +
                                  `*Formulir Kontak Website:*\n` +
                                  `-------------------------------------\n` +
@@ -53,11 +53,11 @@ document.addEventListener("DOMContentLoaded", function () {
                                  `"${message}"\n\n` +
                                  `Apakah pada tanggal tersebut jadwal Kak Syaidah masih tersedia?`;
 
-            // Enkripsi teks agar aman dibaca oleh URL Browser
+            // Enkripsi teks agar aman dibaca oleh URL Browser menuju API WhatsApp
             const encodedText = encodeURIComponent(whatsappText);
             const whatsappURL = `https://wa.me/${targetWANumber}?text=${encodedText}`;
 
-            // Aksi Pertama: Kirim data secara asinkronus ke Email (Web3Forms/Formspree) di latar belakang
+            // Eksekusi Tahap 1: Kirim data secara senyap ke Email (Web3Forms) di latar belakang
             const formData = new FormData(bookingForm);
 
             fetch(bookingForm.action, {
@@ -68,12 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .then(response => {
-                // Aksi Kedua: Eksekusi pengalihan ke WhatsApp setelah proses penembakan data ke email berjalan
+                // Eksekusi Tahap 2: Buka WhatsApp di tab baru setelah form sukses terekam di email
                 window.open(whatsappURL, "_blank");
-                bookingForm.reset(); // Mengosongkan form kembali
+                bookingForm.reset(); // Mengosongkan isian form kembali
             })
             .catch(error => {
-                // Penanganan jika ada kendala jaringan, pengalihan WhatsApp tetap dijalankan agar konversi tidak gagal
+                // Penanganan darurat: Jika sinyal drop atau API email macet, redirect WA tetap dipaksa jalan agar konversi tidak hilang
                 console.error("Email submission failed, redirecting to WA...", error);
                 window.open(whatsappURL, "_blank");
             });
@@ -83,6 +83,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // 4. Fungsi Pengganti Bahasa Global (Bilingual Toggle System)
 function toggleLanguage(lang) {
+    if (!document.getElementById(`btn-${lang}`)) return;
+    
     // Memperbarui status aktif elemen tombol toggle
     document.getElementById("btn-id").classList.remove("active");
     document.getElementById("btn-en").classList.remove("active");
@@ -93,7 +95,7 @@ function toggleLanguage(lang) {
     
     elementsToTranslate.forEach(el => {
         const idKey = el.id;
-        if (dictionary[lang] && dictionary[lang][idKey]) {
+        if (typeof dictionary !== 'undefined' && dictionary[lang] && dictionary[lang][idKey]) {
             el.innerHTML = dictionary[lang][idKey];
         }
     });
