@@ -176,135 +176,138 @@ section {
 }
 
 /* ==========================================================================
-   02. HERO SECTION
+   02. HERO SECTION (MODEL BACKGROUND GAMBAR - RESPONSIVE)
    ========================================================================== */
 .hero-section {
-    padding-top: 140px;
-    padding-bottom: 70px;
+    position: relative;
+    padding-top: 160px;
+    padding-bottom: 100px;
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    /* Jalur gambar latar belakang */
+    background-image: url('../assets/img/hero-mcsyaidah.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Bersahabat untuk performa rendering HP */
 }
 
+/* Lapisan Gelap Sinematik agar teks kontras dan foto terlihat menyatu mewah */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradasi menggelap dari kiri (area teks) ke kanan (area panggung foto) */
+    background: linear-gradient(to right, rgba(4, 20, 39, 0.92) 30%, rgba(11, 25, 44, 0.65) 70%, rgba(4, 20, 39, 0.4) 100%);
+    z-index: 1;
+}
+
+/* Memastikan konten teks berdiri di atas lapisan overlay gambar */
 .hero-container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 48px;
-    align-items: center;
+    padding: 0 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content {
+    max-width: 650px; /* Membatasi lebar teks agar tidak meluber menutupi wajah wajah panggung di kanan */
+    text-align: left;
 }
 
 .badges {
     display: flex;
     gap: 6px;
     flex-wrap: wrap;
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .badge {
     font-size: 11px;
-    font-weight: 500;
-    padding: 4px 12px;
-    background-color: var(--rose-bg);
-    color: var(--navy-medium);
+    font-weight: 600;
+    padding: 6px 14px;
+    background-color: rgba(226, 182, 181, 0.2); /* Rose transparan di atas background gelap */
+    color: #F9F5F6;
     border-radius: 99px;
-    border: 0.5px solid rgba(222, 182, 181, 0.4);
+    border: 0.5px solid rgba(226, 182, 181, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 .hero-name {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--navy-accent);
+    letter-spacing: 0.1em;
+    color: var(--rose-warm); /* Menggunakan rose hangat agar manis di latar gelap */
     margin-bottom: 8px;
 }
 
 .hero-hl {
     font-family: var(--font-serif);
-    font-size: 3.2rem;
-    color: var(--navy-deep);
+    font-size: 3.5rem;
+    color: #FFFFFF; /* Dibalik menjadi putih bersih */
     line-height: 1.25;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .hero-hl em {
-    color: var(--gold-subtle);
+    color: var(--gold); /* Emas champagne menjadi pusat perhatian yang sangat mewah */
     font-style: normal;
 }
 
 .hero-sub {
-    font-size: 15px;
-    color: var(--text-secondary);
-    max-width: 500px;
-    margin-bottom: 24px;
+    font-size: 16px;
+    color: rgba(249, 245, 246, 0.85); /* Putih satin transparan agar tidak menusuk mata */
+    max-width: 540px;
+    margin-bottom: 32px;
+    line-height: 1.7;
 }
 
 .hero-btns {
     display: flex;
-    gap: 12px;
-    margin-bottom: 36px;
+    gap: 14px;
+    margin-bottom: 48px;
+}
+
+/* Penyesuaian tombol sekunder agar kontras di atas gambar gelap */
+.hero-btns .btn-s {
+    border: 1px solid rgba(249, 245, 246, 0.4);
+    color: #FFFFFF;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(4px);
+}
+
+.hero-btns .btn-s:hover {
+    background-color: rgba(255, 255, 255, 0.15);
 }
 
 .hero-stats {
     display: flex;
-    gap: 32px;
-    border-top: 0.5px solid rgba(156, 163, 175, 0.2);
+    gap: 40px;
+    border-top: 0.5px solid rgba(249, 245, 246, 0.2);
     padding-top: 24px;
 }
 
 .stat-n {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
-    color: var(--navy-deep);
+    color: var(--gold); /* Angka statistik dibalik jadi emas agar premium */
     line-height: 1.1;
 }
 
 .stat-l {
     font-size: 11px;
-    color: var(--text-tertiary);
+    color: rgba(249, 245, 246, 0.6);
     text-transform: uppercase;
     letter-spacing: 0.05em;
     margin-top: 4px;
-}
-
-.hero-photo {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(11, 25, 44, 0.08);
-    position: relative;
-}
-
-.hero-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 2;
-    position: relative;
-}
-
-.photo-placeholder-fallback {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--navy-deep), var(--navy-medium));
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
-    color: var(--rose-warm);
-    text-align: center;
-    gap: 12px;
-    z-index: 1;
-}
-
-.photo-placeholder-fallback span {
-    font-size: 12px;
-    max-width: 200px;
-    opacity: 0.8;
 }
 
 /* ==========================================================================
@@ -914,25 +917,153 @@ select.form-field {
     transform: scale(1.05) translateY(-2px);
 }
 
+
 /* ==========================================================================
-   RESPONSIVE MEDIA QUERIES (BREAKPOINTS)
+   RESPONSIVE MEDIA QUERIES (BREAKPOINTS FINAL)
    ========================================================================== */
+
 @media (max-width: 968px) {
-    .hero-container, .meet-grid {
-        grid-template-columns: 1fr;
+    /* 1. Global & Navigasi */
+    section {
+        padding: 60px 20px; /* Memperkecil padding vertikal agar tidak terlalu longgar di tablet */
+    }
+    
+    .nav-links { 
+        display: none; /* Menyederhanakan navigasi mobile sesuai wireframe Claude */
+    }
+    
+    .a-heading { 
+        font-size: 1.8rem; 
         text-align: center;
     }
-    .hero-hl { font-size: 2.4rem; }
-    .hero-sub { margin: 0 auto 24px; }
-    .hero-btns, .hero-stats { justify-content: center; }
-    .hero-right { order: -1; max-width: 380px; margin: 0 auto; }
-    .meet-right { order: -1; max-width: 320px; margin: 0 auto; }
-    .a-heading { font-size: 1.8rem; }
-    .nav-links { display: none; } /* Sederhanakan navigasi mobile */
-    .ig-grid { grid-template-columns: repeat(3, 1fr); }
+
+    /* 2. Hero Section (Model Background Gambar) */
+    .hero-section {
+        padding-top: 140px;
+        padding-bottom: 80px;
+        min-height: 75vh;
+        background-position: 65% center; /* Menggeser fokus gambar ke kanan agar wajah Syaidah tetap terlihat */
+    }
+    
+    .hero-section::before {
+        /* Mengubah arah overlay gradasi menjadi dari bawah ke atas agar teks putih di bawah tetap kontras */
+        background: linear-gradient(to top, rgba(4, 20, 39, 0.98) 50%, rgba(4, 20, 39, 0.8) 75%, rgba(11, 25, 44, 0.4) 100%);
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .hero-hl { 
+        font-size: 2.4rem; 
+    }
+    
+    .hero-sub { 
+        margin: 0 auto 24px; 
+        font-size: 14px;
+    }
+    
+    .badges, 
+    .hero-btns, 
+    .hero-stats { 
+        justify-content: center; 
+    }
+    
+    .hero-stats { 
+        gap: 32px; 
+    }
+
+    /* 3. Meet Syaidah Section */
+    .meet-grid {
+        grid-template-columns: 1fr; /* Reset dari 2 kolom menjadi 1 kolom vertikal */
+        gap: 32px;
+        text-align: center;
+    }
+    
+    .meet-right {
+        order: -1; /* Memaksa foto naik ke atas teks saat di layar tablet/HP */
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .cred-row {
+        justify-content: center; /* Merapikan pills credential agar rata tengah */
+    }
+
+    /* 4. Instagram Grid */
+    .ig-grid { 
+        grid-template-columns: repeat(3, 1fr); /* Berubah dari 6 kolom menjadi 3 kolom */
+        gap: 8px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* 5. Moments & Testimonials Grid (Pencegahan overflow pada layar HP tanggung) */
+    .moments-grid,
+    .testi-grid {
+        grid-template-columns: 1fr; /* Dipaksa menjadi 1 kolom menumpuk ke bawah agar kartu tidak gepeng */
+        gap: 16px;
+    }
+    
+    .t-card {
+        padding: 24px; /* Sedikit memperkecil padding dalam testimoni agar hemat ruang */
+    }
+    
+    .manifesto-q {
+        font-size: 1.5rem; /* Memperkecil ukuran font quote di HP agar tidak patah berantakan */
+    }
 }
 
 @media (max-width: 480px) {
-    .ig-grid { grid-template-columns: repeat(2, 1fr); }
-    .form-grid { grid-template-columns: 1fr; }
+    /* 6. Optimasi Khusus Layar HP Smartphone Kecil */
+    .hero-section {
+        background-position: 60% center; /* Geser gambar latar sedikit lebih ekstrem di HP sempit */
+    }
+    
+    .hero-hl { 
+        font-size: 2rem; 
+    }
+    
+    .hero-btns { 
+        flex-direction: column; 
+        gap: 10px; 
+        width: 100%; 
+    }
+    
+    .hero-btns .btn { 
+        width: 100%; /* Tombol "Lihat Portofolio" & "Mari Terhubung" menjadi lebar penuh (nyaman di-tap jempol) */
+    }
+    
+    .hero-stats {
+        gap: 16px;
+        flex-wrap: wrap; /* Jika layar sangat sempit, item statistik akan turun melingkar dengan rapi */
+        justify-content: space-around;
+    }
+
+    .ig-grid { 
+        grid-template-columns: repeat(2, 1fr); /* Berubah menjadi 2 kolom di HP */
+    }
+    
+    .form-grid { 
+        grid-template-columns: 1fr; /* Form isian menjadi 1 kolom memanjang kebawah */
+        gap: 8px;
+    }
+    
+    .footer-container {
+        flex-direction: column; /* Footer merapat rata tengah ke bawah */
+        text-align: center;
+        gap: 12px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+    
+    .wa-float {
+        right: 16px; /* Menggeser tombol floating WA sedikit ke sudut agar tidak menutupi konten utama */
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+    }
 }
