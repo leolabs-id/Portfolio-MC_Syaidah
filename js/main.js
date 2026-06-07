@@ -19,12 +19,42 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // 2.5 Kunci Batas Minimum Tanggal Input (Hanya menerima Hari Ini & Masa Depan)
+    const dateInput = document.getElementById("f-date");
+    if (dateInput) {
+        // Mengambil data tanggal hari ini berdasarkan jam lokal komputer klien
+        const today = new Date();
+        const yyyy = today.getFullYear();
+        const mm = String(today.getMonth() + 1).padStart(2, '0'); // Ditambah 1 karena bulan di JS dimulai dari 0
+        const dd = String(today.getDate()).padStart(2, '0');
+        
+        // Format hasil akhirnya wajib YYYY-MM-DD (Misal: 2026-06-07)
+        const formattedToday = `${yyyy}-${mm}-${dd}`;
+        
+        // Suntikkan atribut min="YYYY-MM-DD" langsung ke dalam elemen input HTML
+        dateInput.min = formattedToday;
+    }
+
     // 3. Logika Form Ganda: Kirim Data Senyap ke Email & Buka Teks Terstruktur di WhatsApp
     const bookingForm = document.getElementById("hybrid-booking-form");
     
     if (bookingForm) {
         bookingForm.addEventListener("submit", function (e) {
             e.preventDefault(); // Menghentikan redirect bawaan browser agar skrip sinkron berjalan
+
+            // VALIDASI ANTI-AKAL-AKALAN: Cek apakah tanggal yang dimasukkan ada di masa lalu
+            const selectedDate = new Date(eventDate);
+            const todayCheck = new Date();
+            
+            // Setel jam, menit, detik ke angka 0 agar perbandingan tanggal murni akurat
+            selectedDate.setHours(0,0,0,0);
+            todayCheck.setHours(0,0,0,0);
+
+            if (selectedDate < todayCheck) {
+                alert("Maaf, tidak bisa memilih tanggal di masa lalu. Silakan pilih tanggal hari ini atau masa depan.");
+                document.getElementById("f-date").focus();
+                return false; // Menghentikan eksekusi skrip ke tahap kirim email & WA
+            }
 
             // Mengambil seluruh nilai input form
             const clientName = document.getElementById("f-name").value.trim();
