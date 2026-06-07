@@ -1,6 +1,6 @@
 const dictionary = {
     id: {
-        "hero-title": "Menciptakan <em>momen bermakna</em><br>melalui koneksi yang tulus.",
+        "hero-title": "Menciptakan <em>momen bermakna</em><br>melalui koneksi yang tulus",
         "hero-desc": "Membantu audiens merasa disambut, terlibat, dan menjadi bagian dari pengalaman. Dari pertemuan profesional hingga perayaan yang penuh makna.",
         "hero-btn-portfolio": "Lihat Portofolio",
         "hero-btn-connect": "Mari Terhubung",
@@ -31,7 +31,7 @@ const dictionary = {
         "form-submit-btn": "Kirim & Buka WhatsApp →"
     },
     en: {
-        "hero-title": "Creating <em>meaningful moments</em><br>through genuine connection.",
+        "hero-title": "Creating <em>meaningful moments</em><br>through genuine connection",
         "hero-desc": "Helping audiences feel welcomed, engaged, and part of the experience. From professional gatherings to life's meaningful celebrations.",
         "hero-btn-portfolio": "View Portfolio",
         "hero-btn-connect": "Let's Connect",
