@@ -311,45 +311,74 @@ section {
 }
 
 /* ==========================================================================
-   03. TRUSTED BY SECTION
+   03. TRUSTED BY SECTION (MODEL INFINITE SLIDER - LARGE SCALE)
    ========================================================================== */
 .trust-section {
     background-color: white;
     border-top: 0.5px solid rgba(156, 163, 175, 0.2);
     border-bottom: 0.5px solid rgba(156, 163, 175, 0.2);
-    padding: 48px 24px;
+    padding: 60px 0; /* Dinakkan dari 40px ke 60px agar wadahnya memberikan ruang vertikal yang lega */
+    overflow: hidden; 
 }
 
 .trust-container {
-    max-width: 1200px;
-    margin: 0 auto;
+    width: 100%;
     text-align: center;
 }
 
 .trust-lbl {
-    font-size: 12px;
+    font-size: 13px; /* Sedikit dinaikkan agar seimbang */
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     color: var(--text-tertiary);
-    margin-bottom: 24px;
+    margin-bottom: 36px; /* Memberikan jarak lebih tegas ke barisan logo */
+    padding: 0 24px;
 }
 
-.logo-row {
+/* Pembungkus Jendela Slider */
+.slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 0; /* Tambahan ruang napas atas-bawah di dalam slider */
+}
+
+/* Jalur Kereta Logo yang Bergerak */
+.logo-track {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px 24px;
-    flex-wrap: wrap;
+    width: max-content;
+    gap: 70px; /* Diperlebar dari 50px ke 70px agar logo berukuran besar tidak saling berdesakan */
+    animation: scrollLogos 45s linear infinite; 
 }
 
-.logo-chip {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--text-secondary);
-    padding: 6px 16px;
-    background-color: var(--nude-light);
-    border: 0.5px solid rgba(156, 163, 175, 0.2);
-    border-radius: var(--radius-md);
+.logo-track img {
+    height: 50px; /* Diperbesar signifikan dari 35px ke 50px agar lambang instansi terlihat jelas dan kokoh */
+    width: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
+    opacity: 0.45; /* Sedikit diturunkan agar efek monokromnya tetap elegan dan tidak mendominasi visual */
+    transition: var(--transition-smooth);
+}
+
+.logo-track img:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05); /* Memberikan efek pop-up mini saat disentuh kursor */
+}
+
+/* Efek Berhenti Berjalan saat Kursor Tikus Menyentuh Logo Klien */
+.slider-wrapper:hover .logo-track {
+    animation-play-state: paused;
+}
+
+/* Aturan Animasi Pergeseran Horizontal */
+@keyframes scrollLogos {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%); 
+    }
 }
 
 /* ==========================================================================
@@ -375,8 +404,13 @@ section {
 }
 
 /* ==========================================================================
-   05. SELECTED EXPERIENCES
+   05. SELECTED EXPERIENCES (MODEL KARTU FOTO REAL)
    ========================================================================== */
+.moments-section {
+    background-color: var(--nude-light); 
+    border-top: 0.5px solid rgba(156, 163, 175, 0.2);
+}
+
 .moments-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -405,39 +439,44 @@ section {
 }
 
 .m-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.03);
+    transform: translateY(-6px); /* Sedikit kita naikkan efek angkatnya agar interaksi fotonya terasa lebih responsif */
+    box-shadow: 0 16px 32px rgba(11, 25, 44, 0.06);
 }
 
+/* Wadah Penampung Foto Kategori (Ditinggikan dari 120px ke 160px agar visual fotonya puas dilihat) */
 .m-img {
-    height: 120px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100%;
+    height: 160px; 
+    overflow: hidden;
+    background-color: var(--navy-deep); /* Background dasar gelap jika foto sedang loading */
 }
 
-.m-img.c1 { background-color: rgba(24, 95, 165, 0.1); color: var(--navy-accent); }
-.m-img.c2 { background-color: rgba(226, 182, 181, 0.2); color: #72243E; }
-.m-img.c3 { background-color: rgba(212, 175, 55, 0.1); color: var(--gold-subtle); }
-.m-img.c4 { background-color: rgba(159, 225, 203, 0.2); color: #085041; }
+/* Mengatur Gaya Foto di Dalam Kartu Kategori */
+.m-card-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rahasia agar foto terpotong otomatis dengan rapi sesuai rasio kotak */
+    transition: var(--transition-smooth);
+}
 
-.m-img i {
-    width: 32px;
-    height: 32px;
+/* Efek zoom-in halus pada foto ketika kartu didekati kursor */
+.m-card:hover .m-card-photo {
+    transform: scale(1.06);
 }
 
 .m-lbl {
     font-size: 15px;
     font-weight: 600;
     color: var(--navy-deep);
-    padding: 16px 16px 4px;
+    padding: 18px 16px 4px; /* Sedikit penyesuaian padding agar pas */
 }
 
 .m-sub {
     font-size: 12px;
     color: var(--text-secondary);
-    padding: 0 16px 12px;
+    padding: 0 16px 14px;
     flex-grow: 1;
+    line-height: 1.5;
 }
 
 .m-badge {
@@ -450,43 +489,58 @@ section {
     margin: 0 16px 16px;
 }
 
+/* --- Penyelarasan Gaya Tombol PDF Gateway --- */
 .pdf-row {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 16px; 
     flex-wrap: wrap;
-    margin-top: 16px;
+    margin-top: 40px; 
 }
 
 .pdf-btn {
     text-decoration: none;
+    font-family: var(--font-sans);
     font-size: 13px;
     font-weight: 600;
-    padding: 10px 20px;
+    padding: 12px 26px; 
     border-radius: var(--radius-md);
-    border: 0.5px solid rgba(156, 163, 175, 0.4);
-    color: var(--text-secondary);
+    border: 1px solid rgba(30, 62, 98, 0.3); 
+    color: var(--navy-deep);
+    background-color: transparent;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     transition: var(--transition-smooth);
-}
-
-.pdf-btn i {
-    width: 16px;
-    height: 16px;
+    cursor: pointer;
 }
 
 .pdf-btn.prim {
     background-color: var(--navy-accent);
     color: white;
     border-color: var(--navy-accent);
+    box-shadow: 0 4px 14px rgba(24, 95, 165, 0.15);
 }
 
-.pdf-btn:hover {
+.pdf-btn.prim:hover {
+    background-color: var(--navy-medium);
+    border-color: var(--navy-medium);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 6px 20px rgba(24, 95, 165, 0.25);
+}
+
+.pdf-btn:not(.prim):hover {
+    background-color: rgba(30, 62, 98, 0.05);
+    border-color: var(--navy-accent);
+    color: var(--navy-accent);
+    transform: translateY(-2px);
+}
+
+.pdf-btn i,
+.pdf-btn svg {
+    width: 16px;
+    height: 16px;
 }
 
 .pdf-hint {
@@ -494,8 +548,10 @@ section {
     color: var(--text-tertiary);
     width: 100%;
     text-align: center;
-    margin-top: 4px;
+    margin-top: 8px;
+    letter-spacing: 0.02em;
 }
+
 
 /* ==========================================================================
    06. WHAT PEOPLE REMEMBER (TESTIMONIALS)
@@ -1012,6 +1068,14 @@ select.form-field {
     
     .manifesto-q {
         font-size: 1.5rem; /* Memperkecil ukuran font quote di HP agar tidak patah berantakan */
+    }
+
+    /* Trust Section */
+    .logo-track img {
+        height: 28px; /* Ukuran sedikit lebih imut di HP */
+    }
+    .logo-track {
+        gap: 40px;
     }
 }
 
