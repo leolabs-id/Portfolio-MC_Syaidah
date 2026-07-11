@@ -20,7 +20,7 @@ const dictionary = {
         "pdf-hint-text": "Membuka Google Drive di tab baru",
         "testi-title": "Yang Diingat Orang",
         "testi-org-1": "Acara Pemerintah & Korporat",
-        "meet-title": "Kenali Syaidah",
+        "meet-title": "Nur Syaidah",
         "meet-body": "Nur Syaidah merupakan lulusan Ilmu Komunikasi yang telah membawakan berbagai acara sejak 2017, dari forum komunitas yang intim hingga konferensi pemerintah berskala besar. Sebagai anggota aktif Toastmasters International dan MC bilingual bersertifikat, ia membawa keduanya, struktur yang rapi dan kehangatan yang tulus di setiap panggung yang ia pijak.",
         "manifesto-quote": "\"Acara yang paling berkesan bukan selalu yang paling megah. Melainkan yang membuat orang merasa <span>dilihat</span>, <span>dihargai</span>, dan <span>terhubung</span>.\"",
         "ig-title": "Momen Terkini",
