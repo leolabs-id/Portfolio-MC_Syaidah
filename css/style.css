@@ -720,6 +720,8 @@ section {
 .ig-widget-container {
     width: 100%;
     margin-bottom: 32px;
+    min-height: 420px; /* Menjaga ruang agar tombol di bawah tidak terdorong jatuh saat widget masuk */
+    background-color: #f9f9f9; /* Opsional: memberi warna latar tipis selama memuat gambar */
 }
 
 /* Mengambil kendali kustomisasi elemen internal widget dari luar */
@@ -845,6 +847,7 @@ section {
 
 .form-field {
     width: 100%;
+    height: 48px;
     background-color: var(--nude-light);
     border: 0.5px solid rgba(156, 163, 175, 0.3);
     border-radius: var(--radius-md);
