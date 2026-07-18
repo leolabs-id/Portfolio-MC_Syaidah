@@ -40,23 +40,9 @@ document.addEventListener("DOMContentLoaded", function () {
     
     if (bookingForm) {
         bookingForm.addEventListener("submit", function (e) {
-            e.preventDefault(); // Menghentikan redirect bawaan browser agar skrip sinkron berjalan
+            e.preventDefault(); // Menghentikan redirect bawaan browser
 
-            // VALIDASI ANTI-AKAL-AKALAN: Cek apakah tanggal yang dimasukkan ada di masa lalu
-            const selectedDate = new Date(eventDate);
-            const todayCheck = new Date();
-            
-            // Setel jam, menit, detik ke angka 0 agar perbandingan tanggal murni akurat
-            selectedDate.setHours(0,0,0,0);
-            todayCheck.setHours(0,0,0,0);
-
-            if (selectedDate < todayCheck) {
-                alert("Maaf, tidak bisa memilih tanggal di masa lalu. Silakan pilih tanggal hari ini atau masa depan.");
-                document.getElementById("f-date").focus();
-                return false; // Menghentikan eksekusi skrip ke tahap kirim email & WA
-            }
-
-            // Mengambil seluruh nilai input form
+            // 1. AMBIL NILAI INPUT TERLEBIH DAHULU (Dipindahkan ke atas agar tidak ReferenceError)
             const clientName = document.getElementById("f-name").value.trim();
             const clientWA = document.getElementById("f-whatsapp").value.trim();
             const eventType = document.getElementById("f-type").value;
@@ -65,10 +51,21 @@ document.addEventListener("DOMContentLoaded", function () {
             const location = document.getElementById("f-loc").value.trim();
             const message = document.getElementById("f-msg").value.trim();
 
-            // Kunci Utama: Nomor WhatsApp Resmi MC Syaidah (Format International Tanpa + atau Spasi)
-            const targetWANumber = "6285110810257"; 
+            // 2. VALIDASI TANGGAL MASA LALU (Sekarang aman karena eventDate sudah terdefinisi)
+            const selectedDate = new Date(eventDate);
+            const todayCheck = new Date();
+            
+            selectedDate.setHours(0,0,0,0);
+            todayCheck.setHours(0,0,0,0);
 
-            // Membangun template struktur teks untuk dikirim ke WhatsApp Syaidah
+            if (selectedDate < todayCheck) {
+                alert("Maaf, tidak bisa memilih tanggal di masa lalu. Silakan pilih tanggal hari ini atau masa depan.");
+                document.getElementById("f-date").focus();
+                return false; 
+            }
+
+            // 3. KUNCI UTAMA & TEMPLATE WHATSAPP
+            const targetWANumber = "6285110810257"; 
             const whatsappText = `Halo MC Syaidah, saya tertarik untuk melakukan booking jadwal. Berikut detail acaranya:\n\n` +
                                  `*Formulir Kontak Website:*\n` +
                                  `-------------------------------------\n` +
@@ -83,11 +80,10 @@ document.addEventListener("DOMContentLoaded", function () {
                                  `"${message}"\n\n` +
                                  `Apakah pada tanggal tersebut jadwal Kak Syaidah masih tersedia?`;
 
-            // Enkripsi teks agar aman dibaca oleh URL Browser menuju API WhatsApp
             const encodedText = encodeURIComponent(whatsappText);
             const whatsappURL = `https://wa.me/${targetWANumber}?text=${encodedText}`;
 
-            // Eksekusi Tahap 1: Kirim data secara senyap ke Email (Web3Forms) di latar belakang
+            // 4. EKSEKUSI TAHAP 1: Kirim data ke Web3Forms
             const formData = new FormData(bookingForm);
 
             fetch(bookingForm.action, {
@@ -98,12 +94,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
             })
             .then(response => {
-                // Eksekusi Tahap 2: Buka WhatsApp di tab baru setelah form sukses terekam di email
+                // EKSEKUSI TAHAP 2: Buka WhatsApp & Reset Form
                 window.open(whatsappURL, "_blank");
-                bookingForm.reset(); // Mengosongkan isian form kembali
+                bookingForm.reset(); 
             })
             .catch(error => {
-                // Penanganan darurat: Jika sinyal drop atau API email macet, redirect WA tetap dipaksa jalan agar konversi tidak hilang
                 console.error("Email submission failed, redirecting to WA...", error);
                 window.open(whatsappURL, "_blank");
             });
