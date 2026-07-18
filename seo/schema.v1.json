@@ -1,0 +1,107 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://mcsyaidah.com/#website",
+      "url": "https://mcsyaidah.com/",
+      "name": "MC Syaidah",
+      "description": "Bilingual MC, Host, dan Moderator profesional untuk corporate events, seminar, konferensi, dan pernikahan di Jakarta.",
+      "inLanguage": "id-ID",
+      "publisher": {
+        "@id": "https://mcsyaidah.com/#person"
+      }
+    },
+
+    {
+      "@type": "Person",
+      "@id": "https://mcsyaidah.com/#person",
+      "name": "Nur Syaidah",
+      "url": "https://mcsyaidah.com/",
+      "image": "https://mcsyaidah.com/assets/img/syaidah_profil.webp",
+      "jobTitle": [
+        "Bilingual Master of Ceremonies",
+        "Host",
+        "Moderator"
+      ],
+      "description": "Professional bilingual Master of Ceremonies, Host, and Moderator with experience hosting corporate events, government forums, conferences, seminars, and weddings across Greater Jakarta.",
+      "worksFor": {
+        "@id": "https://mcsyaidah.com/#service"
+      },
+      "email": "mailto:syaidah.mc@gmail.com",
+      "telephone": "+6285110810257",
+      "knowsLanguage": [
+        "Indonesian",
+        "English"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/mc.syaidah/"
+      ]
+    },
+
+    {
+      "@type": "Service",
+      "@id": "https://mcsyaidah.com/#service",
+      "name": "MC Syaidah",
+      "url": "https://mcsyaidah.com/",
+      "description": "Professional bilingual MC, Host, and Moderator with experience hosting corporate events, government forums, seminars, conferences, gathering, gala dinner, meeting, and wedding across Greater Jakarta.",
+      "provider": {
+        "@id": "https://mcsyaidah.com/#person"
+      },
+      "logo": "https://mcsyaidah.com/assets/img/logo.svg",
+      "image": "https://mcsyaidah.com/assets/img/syaidah_profil.webp",
+      "slogan": "Creating meaningful moments through genuine connection.",
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Jakarta"
+        },
+        {
+          "@type": "City",
+          "name": "Bogor"
+        },
+        {
+          "@type": "City",
+          "name": "Depok"
+        },
+        {
+          "@type": "City",
+          "name": "Tangerang"
+        },
+        {
+          "@type": "City",
+          "name": "Bekasi"
+        }
+      ],
+      "availableLanguage": [
+        "Indonesian",
+        "English"
+      ],
+      "serviceType": [
+        "Master of Ceremonies",
+        "Bilingual MC",
+        "Host",
+        "Moderator",
+        "Corporate Event MC",
+        "Conference MC",
+        "Seminar MC",
+        "Government Event MC",
+        "Wedding MC",
+        "Gathering MC",
+        "Meeting MC",
+        "Gala Dinner MC"
+      ],
+      "foundingDate": "2024-09-01",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+6285110810257",
+        "email": "syaidah.mc@gmail.com",
+        "contactType": "Booking",
+        "availableLanguage": [
+          "Indonesian",
+          "English"
+        ]
+      }
+    }
+  ]
+}
