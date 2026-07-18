@@ -1,0 +1,15 @@
+# ==========================================
+# Robots.txt untuk mcsyaidah.com
+# Pondasi Arsitektur SEO Statis - Versi 2026
+# ==========================================
+
+# Aturan Umum untuk Semua Robot Mesin Pencari (Google, Bing, DuckDuckGo)
+User-agent: *
+Allow: /
+
+# Proteksi Internal: Larang robot mengindeks folder aset mentah atau skrip internal
+Disallow: /assets/css/
+Disallow: /assets/js/
+
+# Deklarasi Peta Situs: Menuntun robot langsung ke berkas Peta Situs utama
+Sitemap: https://mcsyaidah.com/sitemap.xml
