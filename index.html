@@ -308,7 +308,7 @@
             <div class="moments-container">
                 <h2 class="a-heading lang-el" id="moments-title">Pengalaman Terpilih</h2>
                 
-                <ul class="moments-grid" style="list-style: none; padding: 0; margin: 0;">
+                <ul class="moments-grid">
                     <li class="m-card">
                         <div class="m-img">
                             <img src="assets/img/konferensi.webp" alt="Syaidah saat membawakan Konferensi & Forum" class="m-card-photo" loading="lazy" decoding="async">
@@ -347,12 +347,24 @@
                 </ul>
                 
                 <div class="pdf-row">
-                    <a href="https://drive.google.com/file/d/1GoOfYPCFzR8hvHZwtdIoijzanO1kAI2A/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="pdf-btn prim lang-el" id="pdf-view-btn">
-                        <i data-lucide="file-text"></i> Lihat Portofolio Lengkap
+                    <!-- Tombol 1: Ditambahkan aria-describedby untuk membaca hint di bawahnya -->
+                    <a href="https://drive.google.com/file/d/1GoOfYPCFzR8hvHZwtdIoijzanO1kAI2A/view?usp=drive_link" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="pdf-btn prim lang-el" 
+                    id="pdf-view-btn"
+                    aria-describedby="pdf-hint-text">
+                        <i data-lucide="file-text" aria-hidden="true"></i> Lihat Portofolio Lengkap
                     </a>
                     
-                    <a href="https://drive.google.com/uc?export=download&id=1GoOfYPCFzR8hvHZwtdIoijzanO1kAI2A" target="_blank" rel="noopener noreferrer" class="pdf-btn lang-el" id="pdf-dl-btn">
-                        <i data-lucide="download"></i> Unduh PDF
+                    <!-- Tombol 2: Ditambahkan aria-describedby juga -->
+                    <a href="https://drive.google.com/uc?export=download&id=1GoOfYPCFzR8hvHZwtdIoijzanO1kAI2A" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    class="pdf-btn lang-el" 
+                    id="pdf-dl-btn"
+                    aria-describedby="pdf-hint-text">
+                        <i data-lucide="download" aria-hidden="true"></i> Unduh PDF
                     </a>
                     
                     <span class="pdf-hint lang-el" id="pdf-hint-text">Membuka portofolio di Google Drive</span>
@@ -360,52 +372,76 @@
             </div>
         </section>
 
-        <section class="testi-section">
+        <section class="testi-section" aria-labelledby="testi-title">
             <div class="testi-container">
                 <h2 class="a-heading lang-el" id="testi-title">Yang Mereka Ingat</h2>
-                <div class="testi-grid">
-                    <div class="t-card">
-                        <p class="t-q">"Seneng banget para tamu vip dapat pujian unik dari kak Syaidah, acara jadi ngga kaku."</p>
-                        <div class="t-who">Kak Eva Nurul</div>
-                        <div class="t-org" >Staff DPR</div>
-                    </div>
-                    <div class="t-card">
-                        <p class="t-q">"MC keren dan cantik, mau diajak diskusi, humble banget. Seneng banget dapet MC kayak gini."</p>
-                        <div class="t-who">Kak Naomi</div>
-                        <div class="t-org">Tim Djourney Indonesia</div>
-                    </div>
-                    <div class="t-card">
-                        <p class="t-q">"Next kalau ada acara lagi mauuu sama kak Syaidah lagi."</p>
-                        <div class="t-who">Putri Kalingga</div>
-                        <div class="t-org">Community Event</div>
-                    </div>
-                </div>
+                
+                <ul class="testi-grid">
+                    <li class="t-card">
+                        <blockquote class="t-q">
+                            "Seneng banget para tamu vip dapat pujian unik dari kak Syaidah, acara jadi ngga kaku."
+                        </blockquote>
+                        <div class="t-meta">
+                            <cite class="t-who">Kak Eva Nurul</cite>
+                            <span class="t-org">Staff DPR</span>
+                        </div>
+                    </li>
+                    
+                    <li class="t-card">
+                        <blockquote class="t-q">
+                            "MC keren dan cantik, mau diajak diskusi, humble banget. Seneng banget dapet MC kayak gini."
+                        </blockquote>
+                        <div class="t-meta">
+                            <cite class="t-who">Kak Naomi</cite>
+                            <span class="t-org">Tim Djourney Indonesia</span>
+                        </div>
+                    </li>
+                    
+                    <li class="t-card">
+                        <blockquote class="t-q">
+                            "Next kalau ada acara lagi mauuu sama kak Syaidah lagi."
+                        </blockquote>
+                        <div class="t-meta">
+                            <cite class="t-who">Putri Kalingga</cite>
+                            <span class="t-org">Community Event</span>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
-        <section class="meet-section" id="meet">
+        <section class="meet-section" id="meet" aria-labelledby="meet-title">
             <div class="meet-container">
                 <div class="meet-grid">
-                    <div class="meet-left">
+                    <article class="meet-left">
                         <h2 class="a-heading lang-el" id="meet-title">Tentang Syaidah</h2>
                         <p class="a-body lang-el" id="meet-body">
                             Nur Syaidah merupakan lulusan Ilmu Komunikasi yang telah membawakan berbagai acara sejak 2017, dari forum komunitas yang intim hingga konferensi pemerintah berskala besar. Sebagai anggota aktif Toastmasters International dan MC bilingual bersertifikat, ia memadukan struktur yang rapi dengan pembawaan yang hangat di setiap acara yang dibawakannya.
                         </p>
-                        <div class="cred-row">
-                            <span class="cred">S.I.Kom.</span>
-                            <span class="cred">CLT Certified</span>
-                            <span class="cred">Toastmasters International</span>
-                            <span class="cred">EF × Cambridge</span>
-                            <span class="cred">Jakarta Language Ambassador 2019</span>
-                            <span class="cred">Most Outstanding Diplomat MOIC 2019</span>
-                        </div>
-                    </div>
+                        
+                        <!-- Mengubah kumpulan span menjadi list semantik yang rapi -->
+                        <ul class="cred-row">
+                            <li class="cred">S.I.Kom.</li>
+                            <li class="cred">CLT Certified</li>
+                            <li class="cred">Toastmasters International</li>
+                            <li class="cred">EF × Cambridge</li>
+                            <li class="cred">Jakarta Language Ambassador 2019</li>
+                            <li class="cred">Most Outstanding Diplomat MOIC 2019</li>
+                        </ul>
+                    </article>
+                    
                     <div class="meet-right">
                         <div class="meet-photo">
-                            <img src="assets/img/syaidah_profil.webp" alt="Nur Syaidah Portrait" loading="lazy" decoding="async" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                            <div class="photo-placeholder-fallback">
-                                <i data-lucide="user-check"></i>
-                                <span>Foto editorial berbeda dari hero</span>
+                            <!-- Mengoptimalkan alt text untuk SEO Jasa MC -->
+                            <img src="assets/img/syaidah_profil.webp" 
+                                alt="Nur Syaidah - Profesional Bilingual MC Indonesia" 
+                                loading="lazy" 
+                                decoding="async" 
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            
+                            <div class="photo-placeholder-fallback" style="display: none;">
+                                <i data-lucide="user-check" aria-hidden="true"></i>
+                                <span>Profil Nur Syaidah</span>
                             </div>
                         </div>
                     </div>
@@ -413,47 +449,45 @@
             </div>
         </section>
 
-        <section class="manifesto-section">
+        <section class="manifesto-section" aria-label="Manifesto">
             <div class="manifesto-container">
-                <p class="manifesto-q lang-el" id="manifesto-quote">
+                <blockquote class="manifesto-q lang-el" id="manifesto-quote">
                     "Acara yang paling berkesan bukanlah yang paling megah, melainkan yang membuat orang merasa <span>dilihat</span>, <span>dihargai</span>, dan <span>terhubung</span>."
-                </p>
+                </blockquote>
             </div>
         </section>
 
-        <section class="ig-section">
+        <section class="ig-section" id="instagram-feed" aria-labelledby="ig-title">
             <div class="ig-container">
                 <h2 class="a-heading lang-el" id="ig-title">Momen Terkini</h2>
                 <div class="ig-subtitle lang-el" id="ig-desc">Sekilas acara terbaru, cerita di balik panggung, dan momen-momen yang berkesan.</div>
                 
+                <!-- Wadah Widget Tetap Bersih -->
                 <div class="ig-widget-container">
                     <div data-behold-id="t2hN2IyZWb9YMUN00dFS"></div>
-                    
-                    <script>
-                    (function() {
-                        const d=document,s=d.createElement("script");s.type="module";
-                        s.src="https://w.behold.so/widget.js";d.head.append(s);
-                    })();
-                    </script>
                 </div>
                 
-                <a href="https://instagram.com/mc.syaidah" target="_blank" class="ig-follow">
-                    <i data-lucide="instagram"></i> Follow @mc.syaidah — <span class="lang-el" id="ig-cta-hint">klik foto untuk membuka Instagram</span>
+                <!-- Optimasi Aksesibilitas & Keamanan Tautan -->
+                <a href="https://instagram.com/mc.syaidah" target="_blank" rel="noopener noreferrer" class="ig-follow">
+                    <i data-lucide="instagram" aria-hidden="true"></i> Follow @mc.syaidah — <span class="lang-el" id="ig-cta-hint">klik foto untuk membuka Instagram</span>
                 </a>
             </div>
         </section>
 
-        <section class="connect-section" id="connect">
+        <section class="connect-section" id="connect" aria-labelledby="connect-title">
             <div class="connect-container">
                 <h2 class="connect-hl lang-el" id="connect-title">Sedang Merancang Sebuah Acara?</h2>
                 <p class="connect-sub lang-el" id="connect-desc">Mari ciptakan pengalaman yang akan diingat audiens anda.</p>
                 
                 <div class="connect-btns">
-                    <a href="https://wa.me/6285110810257" target="_blank" class="c-btn wa"><i data-lucide="message-circle"></i> WhatsApp</a>
-                    <a href="mailto:syaidah.mc@gmail.com" class="c-btn mail"><i data-lucide="mail"></i> Email</a>
-                    
-                    <a href="https://instagram.com/mc.syaidah" target="_blank" class="c-btn ig">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin='round' class="svg-ig">
+                    <a href="https://wa.me/6285110810257" target="_blank" rel="noopener noreferrer" class="c-btn wa">
+                        <i data-lucide="message-circle" aria-hidden="true"></i> WhatsApp
+                    </a>
+                    <a href="mailto:syaidah.mc@gmail.com" class="c-btn mail">
+                        <i data-lucide="mail" aria-hidden="true"></i> Email
+                    </a>
+                    <a href="https://instagram.com/mc.syaidah" target="_blank" rel="noopener noreferrer" class="c-btn ig">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin='round' class="svg-ig" aria-hidden="true" focusable="false">
                             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                             <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                             <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
@@ -465,29 +499,58 @@
                 <form action="https://api.web3forms.com/submit" method="POST" id="hybrid-booking-form" class="form-grid">
                     <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
                     
-                    <input type="text" name="name" id="f-name" class="form-field" placeholder="Nama lengkap / Full name" required>
+                    <!-- Input 1: Nama -->
+                    <div class="form-group">
+                        <label for="f-name" class="visually-hidden">Nama Lengkap / Full Name</label>
+                        <input type="text" name="name" id="f-name" class="form-field" placeholder="Nama lengkap / Full name" required>
+                    </div>
                     
-                    <input type="tel" name="whatsapp" id="f-whatsapp" class="form-field" placeholder="No. WhatsApp (Contoh: 628123456...)" pattern="[0-9]{9,15}" inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                    <!-- Input 2: WhatsApp -->
+                    <div class="form-group">
+                        <label for="f-whatsapp" class="visually-hidden">No. WhatsApp</label>
+                        <input type="tel" name="whatsapp" id="f-whatsapp" class="form-field" placeholder="No. WhatsApp (Contoh: 628123456...)" pattern="[0-9]{9,15}" inputmode="numeric" onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>
+                    </div>
                     
-                    <select name="event_type" id="f-type" class="form-field" required>
-                        <option value="" disabled selected hidden>Jenis acara / Type of event ▾</option>
-                        <option value="Conferences & Forums">Conferences & Forums</option>
-                        <option value="Corporate Gatherings">Corporate Gatherings</option>
-                        <option value="Moderating Sessions">Moderating Sessions</option>
-                        <option value="Celebrations & Weddings">Celebrations & Weddings</option>
-                    </select>
+                    <!-- Input 3: Jenis Acara -->
+                    <div class="form-group">
+                        <label for="f-type" class="visually-hidden">Jenis Acara / Type of Event</label>
+                        <select name="event_type" id="f-type" class="form-field" required>
+                            <option value="" disabled selected hidden>Jenis acara / Type of event ▾</option>
+                            <option value="Conferences & Forums">Conferences & Forums</option>
+                            <option value="Corporate Gatherings">Corporate Gatherings</option>
+                            <option value="Moderating Sessions">Moderating Sessions</option>
+                            <option value="Celebrations & Weddings">Celebrations & Weddings</option>
+                        </select>
+                    </div>
                     
-                    <input type="text" name="event_date" id="f-date" class="form-field" placeholder="Tanggal acara / Event date" onfocus="(this.type='date')" onblur="(this.type='text')" onkeydown="return false" required>
+                    <!-- Input 4: Tanggal -->
+                    <div class="form-group">
+                        <label for="f-date" class="visually-hidden">Tanggal Acara / Event Date</label>
+                        <input type="text" name="event_date" id="f-date" class="form-field" placeholder="Tanggal acara / Event date" onfocus="(this.type='date')" onblur="(this.type='text')" onkeydown="return false" required>
+                    </div>
                     
-                    <select name="language" id="f-lang" class="form-field" required>
-                        <option value="" disabled selected hidden>Bahasa / Language ▾</option>
-                        <option value="Indonesia (ID)">Indonesia (ID)</option>
-                        <option value="English (EN)">English (EN)</option>
-                        <option value="Bilingual (ID & EN)">Bilingual (ID & EN)</option>
-                    </select>
+                    <!-- Input 5: Bahasa -->
+                    <div class="form-group">
+                        <label for="f-lang" class="visually-hidden">Bahasa / Language</label>
+                        <select name="language" id="f-lang" class="form-field" required>
+                            <option value="" disabled selected hidden>Bahasa / Language ▾</option>
+                            <option value="Indonesia (ID)">Indonesia (ID)</option>
+                            <option value="English (EN)">English (EN)</option>
+                            <option value="Bilingual (ID & EN)">Bilingual (ID & EN)</option>
+                        </select>
+                    </div>
                     
-                    <input type="text" name="location" id="f-loc" class="form-field" placeholder="Lokasi / Location" required>
-                    <textarea name="message" id="f-msg" class="form-field form-full" placeholder="Pesan / Message" rows="3" required></textarea>
+                    <!-- Input 6: Lokasi -->
+                    <div class="form-group">
+                        <label for="f-loc" class="visually-hidden">Lokasi / Location</label>
+                        <input type="text" name="location" id="f-loc" class="form-field" placeholder="Lokasi / Location" required>
+                    </div>
+                    
+                    <!-- Input 7: Pesan (Mengambil Full Width Grid) -->
+                    <div class="form-group form-full">
+                        <label for="f-msg" class="visually-hidden">Pesan / Message</label>
+                        <textarea name="message" id="f-msg" class="form-field" placeholder="Pesan / Message" rows="3" required></textarea>
+                    </div>
                     
                     <button type="submit" class="form-submit lang-el" id="form-submit-btn">Kirim & Buka WhatsApp →</button>
                 </form>
@@ -513,6 +576,7 @@
         <i data-lucide="message-circle"></i>
     </a>
 
+    <script type="module" src="https://w.behold.so/widget.js" defer></script>
     <script src="js/languages.js"></script>
     <script src="js/main.js"></script>
 </body>
