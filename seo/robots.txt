@@ -3,13 +3,13 @@
 # Pondasi Arsitektur SEO Statis - Versi 2026
 # ==========================================
 
-# Aturan Umum untuk Semua Robot Mesin Pencari (Google, Bing, DuckDuckGo)
+# Aturan Umum untuk Semua Robot Mesin Pencari
 User-agent: *
 Allow: /
 
-# Proteksi Internal: Larang robot mengindeks folder aset mentah atau skrip internal
-Disallow: /assets/css/
-Disallow: /assets/js/
+# Mengizinkan khusus Crawler Gambar Google untuk mengakses semua aset gambar
+User-agent: Googlebot-Image
+Allow: /
 
-# Deklarasi Peta Situs: Menuntun robot langsung ke berkas Peta Situs utama
+# Deklarasi Peta Situs
 Sitemap: https://mcsyaidah.com/sitemap.xml
